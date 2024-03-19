@@ -1,7 +1,7 @@
 import React from 'react';
 import './carousell.css';
 
-const Carousell = () => {
+export const Carousell = () => {
     return (
         <section className="carousell">
             <div className="carousell-content">

@@ -1,7 +1,7 @@
 import React from 'react';
 import './posts.css';
 
-const Posts = () => {
+export const Posts = () => {
     return (
         <section className="posts">
             <div className="posts-content">

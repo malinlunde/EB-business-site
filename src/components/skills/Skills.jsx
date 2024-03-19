@@ -1,7 +1,7 @@
 import React from 'react';
 import './skills.css';
 
-const Skills = () => {
+export const Skills = () => {
     return (
         <section className="skills">
             <div className="skills-content">

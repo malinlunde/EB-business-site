@@ -1,7 +1,7 @@
 import React from 'react';
 import './intro.css';
 
-const Intro = () => {
+export const Intro = () => {
     return (
         <section className="intro">
             <div className="intro-content">
