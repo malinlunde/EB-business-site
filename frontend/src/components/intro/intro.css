@@ -1,0 +1,20 @@
+.intro {
+    background-color: #A0785A; /* Same as header background color */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
