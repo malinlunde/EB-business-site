@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Body } from './components/Body';
 import { Posts } from './components/posts/Posts';
 import { About } from './components/about/About';
+import { Carousell } from './components/carousell/Carousell';
 
 const App = () => {
     return (
@@ -19,11 +20,15 @@ const App = () => {
                     <li>
                         <Link to="/About">Om mig</Link>
                     </li>
+                    <li>
+                        <Link to="/Projects">Projekt</Link>
+                    </li>
                 </ul>
             </nav>
             <Routes>
                 <Route path='/Posts' element={<Posts />} />
                 <Route path='/About' element={<About />} />
+                <Route path='Projects' element={<Carousell />} />
                 <Route path='/' element={<Body />} />
             </Routes>
         </Router>

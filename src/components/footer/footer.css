@@ -14,21 +14,42 @@
     font-size: 2.5rem;
 }
 
-.contact-list {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
+.contact-info {
+    margin-bottom: 20px;
 }
 
-.contact-list li {
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
     margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
 }
 
-.contact-list li a {
+.contact-form button {
+    background-color: #fff;
+    color: #A0785A;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #A0785A;
     color: white;
-    text-decoration: none;
-}
-
-.contact-list li a:hover {
-    text-decoration: underline;
 }
