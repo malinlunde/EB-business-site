@@ -5,6 +5,7 @@ import { Body } from './components/Body';
 import { Posts } from './components/posts/Posts';
 import { About } from './components/about/About';
 import { Carousell } from './components/carousell/Carousell';
+import { ProjectPage } from './components/projectpage/ProjectPage';
 
 const App = () => {
     return (
@@ -20,15 +21,12 @@ const App = () => {
                     <li>
                         <Link to="/About">Om mig</Link>
                     </li>
-                    <li>
-                        <Link to="/Projects">Projekt</Link>
-                    </li>
                 </ul>
             </nav>
             <Routes>
                 <Route path='/Posts' element={<Posts />} />
                 <Route path='/About' element={<About />} />
-                <Route path='Projects' element={<Carousell />} />
+                <Route path='/project/:id/details' element={<ProjectPage />} />
                 <Route path='/' element={<Body />} />
             </Routes>
         </Router>

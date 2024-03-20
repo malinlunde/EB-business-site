@@ -1,8 +1,39 @@
-/* carousell.css */
 .carousell {
-    /* Add your carousel styles here */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Add more space on top and bottom */
 }
 
-.carousell-content {
-    /* Add styles for carousel content here */
+.navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.project-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px; /* Add more space inside the project box */
+}
+
+.project-item h2 {
+    font-size: 24px; /* Increase the font size */
+}
+
+.project-item p {
+    font-size: 18px; /* Increase the font size */
+}
+
+.prev-button,
+.next-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-button img,
+.next-button img {
+    width: 50px; /* Make the arrows larger */
+    height: 50px; /* Make the arrows larger */
 }
