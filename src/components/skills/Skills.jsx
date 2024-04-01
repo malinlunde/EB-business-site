@@ -5,7 +5,7 @@ export const Skills = () => {
     return (
         <section className="skills">
             <div className="skills-content">
-                <h1>Anlita mig</h1>
+                <h1>Vad ska vara här??????</h1>
             </div>
         </section>
     );
