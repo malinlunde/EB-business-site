@@ -11,7 +11,7 @@ export const ProjectPage = () => {
 
     return (
         <div className="project-page">
-            <div className="title">
+            <div className="project-title">
                 <h2>{project.title}</h2>
             </div>
             <div className="project-header">
