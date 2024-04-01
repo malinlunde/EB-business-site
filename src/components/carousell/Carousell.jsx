@@ -111,23 +111,26 @@ export const Carousell = () => {
 
     return (
         <section className="carousell">
-            <div className="navigation">
+            <div className="title">
+                <h2>{projects[currentProjectIndex].title}</h2>
+            </div>
+            <div className="description">
+                <p>{projects[currentProjectIndex].description}</p>
+            </div>
+            <div className="header-row">
                 <button className="prev-button" onClick={prevProject}>
-                    <img src={leftArrow} alt="Previous" />
+                    <img src={leftArrow} alt="Previous" className='left-arrow-img'/>
                 </button>
-            </div>
-            <div className="carousell-content">
-                <div className="project-item">
-                    <h2>{projects[currentProjectIndex].title}</h2>
-                    <p>{projects[currentProjectIndex].description}</p>
-                    <img src={projects[currentProjectIndex].image} alt={projects[currentProjectIndex].title} />
-                    <Link className="see-more-link" to={`/project/${projects[currentProjectIndex].id}`}>Läs mer...</Link> 
+                <div className="project-image">
+                    <img src={projects[currentProjectIndex].images[0]} alt={projects[currentProjectIndex].title} />  
                 </div>
-            </div>
-            <div className="navigation">
                 <button className="next-button" onClick={nextProject}>
-                    <img src={rightArrow} alt="Next" />
+                    <img src={rightArrow} alt="Next" className='right-arrow-img'/>
                 </button>
+            
+            </div>
+            <div className="link">
+                <Link className="see-more-link" to={`/project/${projects[currentProjectIndex].id}`}>Läs mer...</Link>
             </div>
         </section>
     );

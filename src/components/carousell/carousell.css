@@ -1,28 +1,18 @@
 .carousell {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 20px 0; /* Add more space on top and bottom */
+    padding: 20px;
 }
 
-.navigation {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.project-item {
-    flex: 1;
+.title {
     text-align: center;
-    padding: 20px; /* Add more space inside the project box */
+    font-size: 24px;
 }
 
-.project-item h2 {
-    font-size: 24px; /* Increase the font size */
-}
-
-.project-item p {
-    font-size: 18px; /* Increase the font size */
+.description {
+    text-align: center;
+    font-size: 16px;
 }
 
 .prev-button,
@@ -32,24 +22,94 @@
     cursor: pointer;
 }
 
-.prev-button img,
-.next-button img {
-    width: 50px; /* Make the arrows larger */
-    height: 50px; /* Make the arrows larger */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.left-arrow-img,
+.right-arrow-img {
+    width: 45px;
+    height: auto;
+}
+
+.project-image {
+    width: 400px;
+    height: auto;
+}
+
+.project-image img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
 }
 
 .see-more-link {
-    display: block;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: black; /* Set link color to black */
-    text-decoration: none; /* Remove default underline */
-    transition: text-decoration 0.3s; /* Add transition effect */
-    font-weight: 300;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
 }
 
-.see-more-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color: black;
-    font-weight: 400;
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .carousell {
+        padding: 20px;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+    .project-image {
+        max-width: 600px; 
+    }
+
+    .left-arrow-img,
+    .right-arrow-img {
+    width: 65px;
+    height: auto;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .carousell {
+        padding: 20px;
+    }
+    
+    .header-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+    .project-image {
+        max-width: 600px;
+    }
+
+    .left-arrow-img,
+    .right-arrow-img {
+    width: 65px;
+    height: auto;
+    }
 }
