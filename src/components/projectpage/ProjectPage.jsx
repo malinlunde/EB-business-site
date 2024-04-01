@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import './projectpage.css'; // Import the CSS file
+import { projects } from '../carousell/Carousell';
 
 export const ProjectPage = () => {
     const { id } = useParams();
@@ -8,22 +10,21 @@ export const ProjectPage = () => {
     const project = projects.find(project => project.id === parseInt(id));
 
     return (
-        <div>
-            <img src={project.headerImage} alt={project.title} />
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
-            {/* Display additional images */}
+        <div className="project-page">
+            <div className="project-header">
+                <img src={project.headerImage} alt={project.title} />
+            </div>
+            <div className="additional-text">
+                <p>{project.additionalText}</p>
+            </div>
             <div className="additional-images">
                 {project.images.map((image, index) => (
                     <img key={index} src={image} alt={`Image ${index + 1}`} />
                 ))}
             </div>
-            {/* Display additional text */}
-            <p>{project.additionalText}</p>
-            {/* Additional details about the project */}
-            
+            <Link className="back-button" to="/">Tillbaka</Link> 
         </div>
-        );
-    };
-    
-    export default ProjectPage;
+    );
+};
+
+export default ProjectPage;

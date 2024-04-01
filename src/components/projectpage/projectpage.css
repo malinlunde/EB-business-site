@@ -1,0 +1,49 @@
+.project-page {
+    background-color: #A0785A;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    max-width: 800px; /* Limit the width of the project page */
+    margin: 0 auto; /* Center the project page horizontally */
+}
+
+.project-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.project-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.additional-text {
+    color: white; /* Change text color to white */
+    margin-bottom: 20px;
+}
+
+.additional-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.additional-images img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.back-button {
+    background-color: #fff;
+    color: #A0785A; /* Change text color to match background */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
+
+.back-button:hover {
+    background-color: #A0785A;
+    color: #fff; /* Change text color on hover */
+}

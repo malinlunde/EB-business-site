@@ -30,7 +30,7 @@ import singer1 from '../images/singer1.jpg';
 
 
 
-const projects = [
+export const projects = [
     { 
         id: 1, 
         title: 'Bruksholmen Forssjö', 

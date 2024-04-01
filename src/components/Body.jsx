@@ -7,7 +7,7 @@ import { Intro } from './intro/Intro';
 
 export const Body = () => {
     return (
-        <div classname="big-wrapper">
+        <div className="big-wrapper">
          <Intro />
          <Skills />
          <Carousell />
