@@ -18,7 +18,7 @@ export const ProjectPage = () => {
         {/* Display additional text */}
         <p>{project.additionalText}</p>
         {/* Additional details about the project */}
-        <Link to={`/project/${project.id}/details`}>Mer om det här projektet....</Link>
+        
     </div>
     );
 };
