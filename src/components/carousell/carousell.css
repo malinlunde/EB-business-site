@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 .carousell {
     display: flex;
     flex-direction: column;
@@ -8,11 +11,13 @@
 .title {
     text-align: center;
     font-size: 24px;
+    font-family: "Sofia", cursive;
 }
 
 .description {
     text-align: center;
     font-size: 16px;
+    font-family: "Lora", serif;
 }
 
 .prev-button,
@@ -58,6 +63,7 @@
     text-align: center;
     width: 100%;
     margin-top: 25px;
+    font-family: "Lora", serif;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {

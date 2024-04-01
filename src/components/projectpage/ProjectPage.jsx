@@ -11,6 +11,9 @@ export const ProjectPage = () => {
 
     return (
         <div className="project-page">
+            <div className="title">
+                <h2>{project.title}</h2>
+            </div>
             <div className="project-header">
                 <img src={project.headerImage} alt={project.title} />
             </div>

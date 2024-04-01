@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Sofia", cursive;
+    color: white;
+    font-weight: 200;
+}
+
 .project-page {
     background-color: #A0785A;
     padding: 20px;
@@ -20,6 +32,7 @@
 .additional-text {
     color: white; /* Change text color to white */
     margin-bottom: 20px;
+    font-family: "Lora", serif;
 }
 
 .additional-images {
@@ -41,6 +54,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+    font-family: "Lora", serif;
 }
 
 .back-button:hover {
