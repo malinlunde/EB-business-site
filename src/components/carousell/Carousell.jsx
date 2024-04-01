@@ -121,7 +121,7 @@ export const Carousell = () => {
                     <h2>{projects[currentProjectIndex].title}</h2>
                     <p>{projects[currentProjectIndex].description}</p>
                     <img src={projects[currentProjectIndex].image} alt={projects[currentProjectIndex].title} />
-                    <Link className="see-more-link" to={`/project/${projects[currentProjectIndex].id}`}>Se mer</Link> 
+                    <Link className="see-more-link" to={`/project/${projects[currentProjectIndex].id}`}>Läs mer...</Link> 
                 </div>
             </div>
             <div className="navigation">

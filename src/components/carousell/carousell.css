@@ -37,3 +37,19 @@
     width: 50px; /* Make the arrows larger */
     height: 50px; /* Make the arrows larger */
 }
+
+.see-more-link {
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: black; /* Set link color to black */
+    text-decoration: none; /* Remove default underline */
+    transition: text-decoration 0.3s; /* Add transition effect */
+    font-weight: 300;
+}
+
+.see-more-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: black;
+    font-weight: 400;
+}
