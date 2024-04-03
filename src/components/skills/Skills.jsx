@@ -1,11 +1,15 @@
 import React from 'react';
 import './skills.css';
+import bruksholmen9 from '../images/bruksholmen9.jpg';
+import projectman from '../images/projectman.svg';
 
 export const Skills = () => {
     return (
         <section className="skills">
             <div className="skills-content">
-                <h1>Vad ska vara här??????</h1>
+                <img src={projectman} alt="Image" className='projectman-image' />
+                <img src={bruksholmen9} alt="Image" className="bruksholmen-image" />
+                
             </div>
         </section>
     );

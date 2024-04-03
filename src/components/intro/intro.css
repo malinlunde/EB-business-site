@@ -97,7 +97,7 @@
     
     .profile-image {
         border: 20px solid #D2B48C;
-        width: 75%;
+        width: 60%;
         grid-row: span 2; /* Span two rows */
     }
 

@@ -13,7 +13,6 @@ import bruksholmen5 from '../images/bruksholmen5.jpg';
 import bruksholmen6 from '../images/bruksholmen6.jpg';
 import bruksholmen7 from '../images/bruksholmen7.jpg';
 import bruksholmen8 from '../images/bruksholmen8.jpg';
-import bruksholmen9 from '../images/bruksholmen9.jpg';
 import weddingheader from '../images/weddingheader.svg';
 import wedding1 from '../images/wedding1.jpeg';
 import wedding2 from '../images/wedding2.jpeg';
@@ -45,7 +44,6 @@ export const projects = [
             bruksholmen6,
             bruksholmen7,
             bruksholmen8,
-            bruksholmen9,
         ],
         headerImage: BruksholmenHeader,
         additionalText: 'Från bryggan vid Forssjöbadet såg jag de tomma vackra gamla brukslokalerna. Dem renoverades och vi kunde flytta in. Vi skapade en restaurang med dagens lunch, a la carte meny, napolitansk pizza, goda drycker och smarriga bakverk. En inredningsbutik/klädbutik med utvalda favoriter. En 24-food butik där vi sålde våra egna matlådor och tog vara på det som annars hade blivit svinn. Eventloge där vi anordnade konserter med kända svenska artister tack vare samarbete med Henrik Olsson. Vi anordnade även trädgårdsfest med liveband, afterski-fester, stand-up samt bröllop och privata fester. Under våren blev logen istället en blomsterloge med trädgårdshandel. Mitt mål var att skapa ”Ett café med Napolitansk pizza fullt av snygg inredning som gick att köpa samtidigt som ett lokalt eller stort band/artist stod på en liten scen och gav oss en magisk upplevelse. Viktigt är att det blir en plats att träffa nya bekantskaper och en familjär känsla med stammisar.”'
