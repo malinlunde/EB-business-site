@@ -112,9 +112,6 @@ export const Carousell = () => {
             <div className="title">
                 <h2>{projects[currentProjectIndex].title}</h2>
             </div>
-            <div className="description">
-                <p>{projects[currentProjectIndex].description}</p>
-            </div>
             <div className="header-row">
                 <button className="prev-button" onClick={prevProject}>
                     <img src={leftArrow} alt="Previous" className='left-arrow-img'/>
@@ -126,6 +123,9 @@ export const Carousell = () => {
                     <img src={rightArrow} alt="Next" className='right-arrow-img'/>
                 </button>
             
+            </div>
+            <div className="description">
+                <p>{projects[currentProjectIndex].description}</p>
             </div>
             <div className="link">
                 <Link className="see-more-link" to={`/project/${projects[currentProjectIndex].id}`}>Läs mer...</Link>

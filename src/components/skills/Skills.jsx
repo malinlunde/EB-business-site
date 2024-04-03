@@ -5,6 +5,7 @@ import projectman from '../images/projectman.svg';
 
 export const Skills = () => {
     return (
+    <div className='skills-wrapper'>
         <section className="skills">
             <div className="skills-content">
                 <img src={projectman} alt="Image" className='projectman-image' />
@@ -12,6 +13,7 @@ export const Skills = () => {
                 
             </div>
         </section>
+    </div>
     );
 };
 
