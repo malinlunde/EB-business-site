@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 .about {
     padding: 50px 0;
     text-align: center;
@@ -10,9 +13,12 @@
 
 .about h1 {
     font-size: 2.5rem;
+    font-family: "Sofia", cursive;
 }
 
 .about p {
     font-size: 1.2rem;
     margin-top: 20px;
+    font-family: "Lora", serif;
+    line-height: 1.5;
 }
