@@ -9,8 +9,7 @@ export const Intro = () => {
                 <img src={profileImage} alt="Profile" className="profile-image" />
                 <h1>Erica Börjesson</h1>
                 <p>Välkommen till Ericas värld av kreativitet och passion! Som entreprenör och mångsidig kreatör förenar jag mina intressen för event, bröllop, projektledning, inredning och musik för att skapa minnesvärda upplevelser och vackra atmosfärer. Genom mina projekt strävar jag efter att inte bara uppfylla förväntningar, utan att överträffa dem och lämna ett bestående intryck.</p>
-                
-         </div>
+            </div>
         </section> 
     );
 };

@@ -19,7 +19,7 @@
 
 
 .profile-image {
-    width: 26%;
+    width: 30%;
     height: auto;
     border: 14px solid #D2B48C;
     border-style: outset;
@@ -61,8 +61,20 @@
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
+    
+    .intro-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-rows: auto auto; /* Two rows */
+        grid-column-gap: 20px;
+        align-items: start;
+    }
+    
     .profile-image {
         border: 18px solid #D2B48C;
+        width: 65%;
+        margin: auto auto;
+        grid-row: span 2; /* Span two rows */
     }
 
     .intro h1 {
@@ -72,13 +84,21 @@
     .intro p {
         font-size: 20px;
     }
-    
 }
 
-
 @media only screen and (min-width: 1024px) {
+    .intro-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-rows: auto auto; /* Two rows */
+        grid-column-gap: 20px;
+        align-items: start;
+    }
+    
     .profile-image {
         border: 20px solid #D2B48C;
+        width: 75%;
+        grid-row: span 2; /* Span two rows */
     }
 
     .intro h1 {
