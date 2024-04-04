@@ -1,7 +1,7 @@
 .skills-wrapper {
-   border: 5px solid black;
+   border: 3px solid blanchedalmond;
    margin: 20px; /* Add some margin around the border */
-   overflow: hidden; /* Hide any overflow */
+   overflow: hidden; /* Hide any verflow */
 }
 
 .skills {

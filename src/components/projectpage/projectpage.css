@@ -26,7 +26,7 @@
 }
 
 .project-header img {
-    max-width: 80%;
+    max-width: 65%;
     height: auto;
 }
 
@@ -99,6 +99,6 @@
     }
 
     .project-title {
-        font-size: 40px;
+        font-size: 34px;
     }
 }
