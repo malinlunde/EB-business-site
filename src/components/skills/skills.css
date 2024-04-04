@@ -1,24 +1,52 @@
 .skills-wrapper {
    border: 5px solid black;
+   margin: 20px; /* Add some margin around the border */
+   overflow: hidden; /* Hide any overflow */
 }
 
 .skills {
-    background-color: #EFDECD; /* Background color */
-    padding: 0;
-    text-align: center;
+   background-color: #EFDECD; /* Background color */
+   padding: 0;
+   text-align: center;
 }
 
 .skills-content {
    display: flex;
-   justify-content: space-between;
+   flex-direction: column; /* Change flex direction to column */
    width: 100%;
-   height: 100vh;
+   height: auto; /* Remove fixed height */
 }
 
 .projectman-image,
 .bruksholmen-image {
-   height: 100%;
-   object-fit: cover;
-   flex-shrink: 0;
-   width: 50%; 
+   width: 100%; /* Set image width to 100% */
+   height: auto; /* Maintain aspect ratio */
+   margin-bottom: 0; /* Add some space between images */
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+   .skills-content {
+       flex-direction: column; /* Change flex direction to column */
+   }
+
+   .projectman-image,
+   .bruksholmen-image {
+       width: 100%; /* Set image width to 100% */
+       margin-bottom: 0; /* Add some space between images */
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   .skills-content {
+       display: flex;
+       justify-content: space-between;
+       height: 100vh;
+       flex-direction: row; /* Change flex direction to row */
+   }
+
+   .projectman-image,
+   .bruksholmen-image {
+       width: 50%; /* Set image width to 50% */
+       margin-bottom: 0; /* Remove margin between images */
+   }
 }
