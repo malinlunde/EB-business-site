@@ -1,13 +1,6 @@
 .skills-wrapper {
-   border: 3px solid blanchedalmond;
    margin: 20px; /* Add some margin around the border */
    overflow: hidden; /* Hide any verflow */
-}
-
-.skills {
-   background-color: #EFDECD; /* Background color */
-   padding: 0;
-   text-align: center;
 }
 
 .skills-content {
@@ -26,27 +19,31 @@
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
    .skills-content {
-       flex-direction: column; /* Change flex direction to column */
+      display: flex;
+      flex-direction: row; /* Change flex direction to column */
+      justify-content: space-around;
    }
 
    .projectman-image,
    .bruksholmen-image {
-       width: 100%; /* Set image width to 100% */
+       width: 380px; /* Set image width to 100% */
        margin-bottom: 0; /* Add some space between images */
+       padding: 20px;
    }
 }
 
 @media only screen and (min-width: 1024px) {
    .skills-content {
-       display: flex;
-       justify-content: space-between;
-       height: 100vh;
-       flex-direction: row; /* Change flex direction to row */
+      display: flex;
+      flex-direction: row; /* Change flex direction to column */
+      justify-content: space-around;
+      margin-bottom: 30px;
+      margin-top: 30px;
    }
 
    .projectman-image,
    .bruksholmen-image {
-       width: 50%; /* Set image width to 50% */
-       margin-bottom: 0; /* Remove margin between images */
+      width: 530px; /* Set image width to 50% */
+   
    }
 }

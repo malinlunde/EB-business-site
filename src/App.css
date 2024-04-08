@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
 nav {
     background-color: #A0785A;
@@ -29,9 +29,10 @@ nav {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth transition effect */
-    font-family: "Lora", serif;
+    font-family: "Reddit Mono", monospace;
   }
   
   a:hover {
-    color: brown; /* Change color on hover */
+    color: salmon; /* Change color on hover */
+    text-decoration: underline;
   }

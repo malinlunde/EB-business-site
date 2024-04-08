@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
 
 .project-page {
@@ -33,7 +33,7 @@
 .additional-text {
     color: white; /* Change text color to white */
     margin-bottom: 20px;
-    font-family: "Lora", serif;
+    font-family: "Reddit Mono", monospace;
     max-width: 80%;
     font-size: 14px;
     line-height: 1.5;
@@ -58,7 +58,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s; /* Add transition effect */
-    font-family: "Lora", serif;
+    font-family: "Reddit Mono", monospace;
     margin-top: 30px;
     margin-bottom: 30px;
 }

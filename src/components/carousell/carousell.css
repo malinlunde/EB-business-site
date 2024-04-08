@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
 .carousell {
     display: flex;
@@ -18,7 +18,7 @@
 .description {
     text-align: center;
     font-size: 16px;
-    font-family: "Lora", serif;
+    font-family: "Reddit Mono", monospace;
 }
 
 .prev-button,
@@ -62,7 +62,6 @@
 .project-image {
     width: 400px;
     height: auto;
-    border: 8px solid blanchedalmond;
 }
 
 .project-image img {
