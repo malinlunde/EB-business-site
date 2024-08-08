@@ -6,6 +6,7 @@ import { Posts } from './components/posts/Posts';
 import { About } from './components/about/About';
 import { Carousell } from './components/carousell/Carousell';
 import { ProjectPage } from './components/projectpage/ProjectPage';
+import AuthCallback from './components/AuthCallback';
 
 const App = () => {
     return (
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path='/Posts' element={<Posts />} />
                 <Route path='/About' element={<About />} />
                 <Route path='/project/:id' element={<ProjectPage />} />
+                <Route path='/auth/callback' element={<AuthCallback />} />
                 <Route path='/' element={<Body />} />
             </Routes>
         </Router>
