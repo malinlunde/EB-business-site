@@ -10,7 +10,7 @@ export const Posts = () => {
   useEffect(() => {
     const getContent = async () => {
       try {
-        const pageContent = await fetchPageContent('https://ericaborjesson.se/instagram/'); // Replace 'instagram-feed' with your page slug
+        const pageContent = await fetchPageContent('instagram/'); // Replace 'instagram-feed' with your page slug
         setContent(pageContent);
         setLoading(false);
       } catch (error) {
