@@ -26,13 +26,13 @@ nav {
   }
   
   a {
-    color: white;
+    color: black;
     text-decoration: none;
     transition: color 0.3s ease; /* Smooth transition effect */
     font-family: "Reddit Mono", monospace;
   }
   
   a:hover {
-    color: salmon; /* Change color on hover */
+    color: white; /* Change color on hover */
     text-decoration: underline;
   }
