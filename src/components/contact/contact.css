@@ -1,18 +1,22 @@
 .contact {
     padding: 50px 0;
     text-align: center;
-    background-color: #f9f9f9; /* Optional: Add a background color */
+    background-color: #A0785A;
 }
 
 .contact-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    font-family: "Reddit Mono", monospace;
+    color: white;
 }
 
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    font-family: "Sofia", cursive;
+    color: white;
 }
 
 .contact form {
@@ -42,3 +46,25 @@
 .contact button:hover {
     background-color: #0056b3;
 }
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: black; /* Ensure the initial color is white */
+    text-decoration: none; /* Remove underline initially */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and underline */
+}
+
+.social-links a:hover {
+    color: white; 
+    text-decoration: underline; /
+}
+
