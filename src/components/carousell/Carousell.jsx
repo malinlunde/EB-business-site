@@ -35,15 +35,12 @@ export const projects = [
         title: 'Bruksholmen Forssjö', 
         description: 'Från bryggan vid Forssjöbadet såg jag de tomma vackra gamla brukslokalerna. Dem renoverades och vi kunde flytta in...', 
         images: [
-            bruksholmen,
-            bruksholmen1,
-            bruksholmen2,
-            bruksholmen3,
-            bruksholmen4,
-            bruksholmen5,
-            bruksholmen6,
             bruksholmen7,
             bruksholmen8,
+            bruksholmen3,
+            bruksholmen6,
+            bruksholmen4,
+            bruksholmen5,
         ],
         headerImage: BruksholmenHeader,
         additionalText: 'Från bryggan vid Forssjöbadet såg jag de tomma vackra gamla brukslokalerna. Dem renoverades och vi kunde flytta in. Vi skapade en restaurang med dagens lunch, a la carte meny, napolitansk pizza, goda drycker och smarriga bakverk. En inredningsbutik/klädbutik med utvalda favoriter. En 24-food butik där vi sålde våra egna matlådor och tog vara på det som annars hade blivit svinn. Eventloge där vi anordnade konserter med kända svenska artister tack vare samarbete med Henrik Olsson. Vi anordnade även trädgårdsfest med liveband, afterski-fester, stand-up samt bröllop och privata fester. Under våren blev logen istället en blomsterloge med trädgårdshandel. Mitt mål var att skapa ”Ett café med Napolitansk pizza fullt av snygg inredning som gick att köpa samtidigt som ett lokalt eller stort band/artist stod på en liten scen och gav oss en magisk upplevelse. Viktigt är att det blir en plats att träffa nya bekantskaper och en familjär känsla med stammisar.”'
@@ -64,7 +61,6 @@ export const projects = [
         title: 'Projektledare & Inredning', 
         description: 'Nätverk och mötet med nya människor har alltid drivit mig framåt...', 
         images: [
-            nyttkontor1,
             nyttkontor2,
             nyttkontor3,
         ],

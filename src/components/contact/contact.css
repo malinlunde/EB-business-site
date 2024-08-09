@@ -84,6 +84,7 @@
     .contact input, 
     .contact textarea {
         font-size: 1.1rem; /* Slightly larger font size for inputs */
+        width: 60%;
     }
 
     .contact button {
@@ -108,7 +109,7 @@
     .contact input, 
     .contact textarea {
         font-size: 1.2rem; /* Larger font size for inputs */
-        width: 80%; /* Limit the width of the inputs to 80% of the container */
+        width: 60%; /* Limit the width of the inputs to 80% of the container */
         margin: 0 auto 20px; /* Center align inputs */
     }
 
