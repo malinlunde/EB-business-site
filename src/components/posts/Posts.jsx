@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './posts.css';
 import { fetchPageContent } from '../../services/wordpressService';
+import parse from 'html-react-parser';
 
 export const Posts = () => {
   const [content, setContent] = useState('');
@@ -11,6 +12,7 @@ export const Posts = () => {
     const getContent = async () => {
       try {
         const pageContent = await fetchPageContent('instagram/'); // Replace 'instagram-feed' with your page slug
+        console.log('Fetched Content:', pageContent);
         setContent(pageContent);
         setLoading(false);
       } catch (error) {
@@ -35,6 +37,7 @@ export const Posts = () => {
     <section className="posts">
       <div className="posts-content">
         <h1>Mitt Instagram</h1>
+        {parse(content)}
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </section>

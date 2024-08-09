@@ -6,13 +6,63 @@
 .posts-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px; /* Added padding to give some space on the sides */
 }
 
 .posts h1 {
     font-size: 2.5rem;
+    margin-bottom: 30px; /* Add some spacing below the heading */
 }
 
 .posts p {
     font-size: 1.2rem;
     margin-top: 20px;
+    color: #333; /* Set a default color for paragraphs */
+}
+
+.posts img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.sbi_photo_wrap {
+    margin-bottom: 20px; /* Add space between images */
+    position: relative; /* Positioning for possible overlays or captions */
+}
+
+.sbi_photo_wrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners to images */
+}
+
+.sbi_photo_wrap a {
+    display: block;
+    text-decoration: none;
+}
+
+.sbi_photo_wrap a:hover {
+    text-decoration: underline;
+}
+
+.sbi_screenreader {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+    display: block;
+    word-wrap: break-word; /* Ensure long text breaks to the next line */
+    max-width: 100%; /* Ensure the text doesn’t overflow */
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition effect */
+    font-family: "Reddit Mono", monospace;
+}
+
+a:hover {
+    color: #666; /* Change color on hover for all links */
 }
