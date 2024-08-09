@@ -17,20 +17,19 @@
    margin-bottom: 0; /* Add some space between images */
 }
 
+.projectman-image img,
+   .bruksholmen-image img {
+      border-radius: 15%;
+   }
+
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
    .skills-content {
       display: flex;
       flex-direction: row; /* Change flex direction to column */
       justify-content: space-around;
    }
-
-   .projectman-image,
-   .bruksholmen-image {
-       width: 380px; /* Set image width to 100% */
-       margin-bottom: 0; /* Add some space between images */
-       padding: 20px;
-   }
 }
+
 
 @media only screen and (min-width: 1024px) {
    .skills-content {

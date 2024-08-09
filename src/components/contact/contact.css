@@ -31,6 +31,7 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 80%; /* Make inputs full width on mobile */
 }
 
 .contact button {
@@ -41,6 +42,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%; /* Make button full width on mobile */
 }
 
 .contact button:hover {
@@ -54,17 +56,69 @@
 .social-links {
     display: flex;
     justify-content: center;
+    gap: 10px; /* Add some space between icons */
     margin-bottom: 20px;
 }
 
 .social-links a {
-    color: black; /* Ensure the initial color is white */
-    text-decoration: none; /* Remove underline initially */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for color and underline */
+    color: black; 
+    text-decoration: none; 
+    transition: color 0.3s ease, text-decoration 0.3s ease; 
 }
 
 .social-links a:hover {
     color: white; 
-    text-decoration: underline; /
+    text-decoration: underline;
 }
 
+/* Tablet View */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .contact-content {
+        padding: 0 40px; /* Increase padding for tablet */
+    }
+
+    .contact h2 {
+        font-size: 2.5rem; /* Slightly larger heading on tablet */
+    }
+
+    .contact input, 
+    .contact textarea {
+        font-size: 1.1rem; /* Slightly larger font size for inputs */
+    }
+
+    .contact button {
+        font-size: 1.1rem; /* Slightly larger font size for button */
+    }
+
+    .social-links {
+        gap: 15px; /* Increase space between icons on tablet */
+    }
+}
+
+/* Desktop View */
+@media only screen and (min-width: 1024px) {
+    .contact-content {
+        padding: 0 60px; /* Increase padding for desktop */
+    }
+
+    .contact h2 {
+        font-size: 3rem; /* Larger heading on desktop */
+    }
+
+    .contact input, 
+    .contact textarea {
+        font-size: 1.2rem; /* Larger font size for inputs */
+        width: 80%; /* Limit the width of the inputs to 80% of the container */
+        margin: 0 auto 20px; /* Center align inputs */
+    }
+
+    .contact button {
+        font-size: 1.2rem; /* Larger font size for button */
+        width: 40%; /* Limit the width of the button */
+        margin: 0 auto; /* Center align button */
+    }
+
+    .social-links {
+        gap: 20px; /* Increase space between icons on desktop */
+    }
+}
