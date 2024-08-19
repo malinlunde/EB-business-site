@@ -13,6 +13,12 @@ header {
     width: 100%;
 }
 
+.nav-links {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    flex-grow: 1;
+}
+
 .nav-links ul {
     display: flex;
     list-style: none;
@@ -72,19 +78,26 @@ header {
 /* Tablet view */
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
     .nav-links ul {
-        flex-direction: row;
-    }
-
-    .nav-link {
-        font-size: 1rem;
+        display: none; /* Hide the regular links */
     }
 
     .menu-icon {
-        display: block;
+        display: block; /* Show the hamburger menu */
     }
 
     .nav-links ul.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
         left: 0;
+        width: 100%;
+        background-color: #A0785A;
+        z-index: 1;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
     }
 }
 
@@ -96,5 +109,9 @@ header {
 
     .nav-link {
         font-size: 1rem;
+    }
+
+    .menu-icon {
+        display: none; /* Hide the hamburger menu in desktop view */
     }
 }
