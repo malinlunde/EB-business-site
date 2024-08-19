@@ -13,7 +13,18 @@ export const Posts = () => {
       try {
         const pageContent = await fetchPageContent('instagram/'); // Replace 'instagram-feed' with your page slug
         console.log('Fetched Content:', pageContent);
-        setContent(pageContent);
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(pageContent, 'text/html');
+        const images = doc.querySelectorAll('.sbi_photo img');
+
+        images.forEach((img) => {
+          const fullRes = img.closest('a').getAttribute('data-full-res');
+          if (fullRes) {
+            img.src = fullRes; // Replace placeholder src with full resolution image src
+          }
+        });
+
+        setContent(doc.body.innerHTML);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching page content:', error);
@@ -34,11 +45,10 @@ export const Posts = () => {
   }
 
   return (
-    <section className="posts">
+    <section className="posts" id="posts">
       <div className="posts-content">
         <h1>Mitt Instagram</h1>
         {parse(content)}
-        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </section>
   );

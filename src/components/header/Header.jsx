@@ -42,13 +42,13 @@ export const Header = () => {
               <Link to="/" className='nav-link' onClick={() => handleNavigation('/')}>Hem</Link>
             </li>
             <li>
-              <Link to="/Posts" className='nav-link' onClick={() => handleNavigation('/Posts')}>Mitt Instagram</Link>
-            </li>
-            <li>
               <Link to="/About" className='nav-link' onClick={() => handleNavigation('/About')}>Om mig</Link>
             </li>
             <li>
               <span className='nav-link' onClick={() => handleNavigation('/#carousell')}>Projekt</span> 
+            </li>
+            <li>
+              <span className='nav-link' onClick={() => handleNavigation('/#posts')}>Instagram</span>
             </li>
             <li>
               <span className='nav-link' onClick={() => handleNavigation('/#contact')}>Kontakt</span>

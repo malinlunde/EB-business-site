@@ -9,51 +9,52 @@
     padding: 0 20px; /* Added padding to give some space on the sides */
 }
 
-.posts h1 {
-    font-size: 2.5rem;
-    margin-bottom: 30px; /* Add some spacing below the heading */
+.sbi_header_link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-bottom: 30px;
 }
 
-.posts p {
-    font-size: 1.2rem;
-    margin-top: 20px;
-    color: #333; /* Set a default color for paragraphs */
+.sbi_header_img {
+    width: 80%;
 }
 
-.posts img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
+.sbi_feedtheme_header_text h3 {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+#sbi_images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center images in the container */
 }
 
 .sbi_photo_wrap {
-    margin-bottom: 20px; /* Add space between images */
-    position: relative; /* Positioning for possible overlays or captions */
+    position: relative;
+    width: calc(25% - 10px); /* Four images per row with space */
+    margin-bottom: 10px; /* Add space below each image */
 }
 
 .sbi_photo_wrap img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional: Add rounded corners to images */
-}
-
-.sbi_photo_wrap a {
     display: block;
-    text-decoration: none;
+    border-radius: 10px; /* Optional: Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Slight shadow for depth */
 }
 
-.sbi_photo_wrap a:hover {
-    text-decoration: underline;
+.sbi_photo_wrap a img {
+    opacity: 1; /* Ensure image is fully visible */
 }
 
-.sbi_screenreader {
-    font-size: 1.2rem;
-    color: #333;
-    margin-top: 10px;
-    display: block;
-    word-wrap: break-word; /* Ensure long text breaks to the next line */
-    max-width: 100%; /* Ensure the text doesn’t overflow */
+/* Hide placeholder images */
+.sbi_photo_wrap img[src*='placeholder.png'] {
+    display: none;
 }
 
 a {
