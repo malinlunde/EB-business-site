@@ -1,20 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
 .posts {
     padding: 50px 0;
     text-align: center;
+    background-color: #f9f9f9; /* Optional: Light background color for contrast */
 }
 
 .posts-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px; /* Added padding to give some space on the sides */
+    padding: 0 20px;
+    font-family: "Sofia", cursive;
+    color: #A0785A; 
 }
 
+.h1 {
+    font-family: "Sofia", cursive;
+
+}
+
+/* Header Styling */
 .sbi_header_link {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: #A0785A; 
     margin-bottom: 30px;
 }
 
@@ -27,6 +39,7 @@
     margin-left: 10px;
 }
 
+/* Instagram Images Styling - Mobile First */
 #sbi_images {
     display: flex;
     flex-wrap: wrap;
@@ -36,8 +49,9 @@
 
 .sbi_photo_wrap {
     position: relative;
-    width: calc(25% - 10px); /* Four images per row with space */
+    width: 100%; /* One image per row on mobile */
     margin-bottom: 10px; /* Add space below each image */
+    text-align: center; /* Center align the text/caption */
 }
 
 .sbi_photo_wrap img {
@@ -48,8 +62,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Slight shadow for depth */
 }
 
-.sbi_photo_wrap a img {
-    opacity: 1; /* Ensure image is fully visible */
+.svg-inline--fa {
+    display: none;
+}
+
+.sbi_photo_wrap .sbi-screenreader {
+    margin-top: 5px; /* Space between image and text */
+    display: block; /* Make sure the text is visible */
+    font-size: 0.9em; /* Adjust font size for readability */
+    color: #333; /* Darker color for contrast */
 }
 
 /* Hide placeholder images */
@@ -57,13 +78,54 @@
     display: none;
 }
 
+/* Tablet Layout */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .sbi_photo_wrap {
+        width: calc(50% - 10px); /* Two images per row on tablets */
+    }
+}
+
+/* Desktop Layout */
+@media only screen and (min-width: 1024px) {
+    .sbi_photo_wrap {
+        width: calc(25% - 10px); /* Four images per row on desktop */
+    }
+}
+
+/* Link Styles */
 a {
     color: black;
     text-decoration: none;
-    transition: color 0.3s ease; /* Smooth transition effect */
+    transition: color 0.3s ease;
     font-family: "Reddit Mono", monospace;
 }
 
 a:hover {
-    color: #666; /* Change color on hover for all links */
+    color: #666;
+}
+
+/* Instagram Button */
+.sbi_follow_btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A0785A; 
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sbi_follow_btn:hover {
+    background-color: #3069a9;
+}
+
+/* Optional: Smooth transition effect for images */
+.sbi_photo_wrap img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sbi_photo_wrap img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
 }
