@@ -17,7 +17,6 @@ import weddingheader from '../images/weddingheader.svg';
 import wedding1 from '../images/wedding1.png';
 import wedding2 from '../images/wedding2.png';
 import interior from '../images/Interior.svg';
-import nyttkontor1 from '../images/nyttkontor1.png';
 import nyttkontor2 from '../images/nyttkontor2.png';
 import nyttkontor3 from '../images/nyttkontor3.png';
 import singerheader from '../images/Singer .svg';
@@ -104,7 +103,7 @@ export const Carousell = () => {
 
 
     return (
-        <section className="carousell">
+        <section className="carousell" id="carousell" >
             <div className="title">
                 <h2>{projects[currentProjectIndex].title}</h2>
             </div>

@@ -5,24 +5,13 @@ import { Body } from './components/Body';
 import { Posts } from './components/posts/Posts';
 import { About } from './components/about/About';
 import { ProjectPage } from './components/projectpage/ProjectPage';
+import { Header } from './components/header/Header';
 
 
 const App = () => {
     return (
         <Router>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Hem</Link>
-                    </li>
-                    <li>
-                        <Link to="/Posts">Mina inlägg</Link>
-                    </li>
-                    <li>
-                        <Link to="/About">Om mig</Link>
-                    </li>
-                </ul>
-            </nav>
+            <Header />
             <Routes>
                 <Route path='/Posts' element={<Posts />} />
                 <Route path='/About' element={<About />} />

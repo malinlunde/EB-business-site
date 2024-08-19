@@ -37,7 +37,7 @@ export const Contact = () => {
     }
 
     return (
-        <section className="contact">
+        <section className="contact" id="contact">
             <div className="contact-content">
                 <h2>Kontakta mig</h2>
                 <div dangerouslySetInnerHTML={{ __html: formContent }} />

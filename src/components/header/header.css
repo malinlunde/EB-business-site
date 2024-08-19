@@ -1,0 +1,100 @@
+header {
+    background-color: #A0785A; /* Same background color as the footer */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links ul li {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: "Reddit Mono", monospace;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: pink; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile view */
+@media only screen and (max-width: 600px) {
+    .nav-links ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        background-color: #A0785A;
+        transition: left 0.3s ease;
+        z-index: 1;
+    }
+
+    .nav-links ul.open {
+        left: 0;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Tablet view */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .nav-links ul {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links ul.open {
+        left: 0;
+    }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1024px) {
+    .nav-links ul {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+}

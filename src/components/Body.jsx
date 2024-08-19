@@ -9,13 +9,13 @@ import { Contact } from './contact/Contact';
 export const Body = () => {
     return (
         <div className="big-wrapper">
-         <Intro />
-         <Carousell />
+         <Intro id="Intro" />
+         <Carousell id="carousell" />
          <Skills />
-         <Contact />
+         <Contact id="Contact" />
          <Footer />
         </div>
     );
 };
 
-export default Body; 
+export default Body;
