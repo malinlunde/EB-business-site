@@ -15,23 +15,32 @@ export const Posts = () => {
         console.log('Fetched Content:', pageContent);
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageContent, 'text/html');
-        const images = doc.querySelectorAll('.sbi_photo img');
+        const images = doc.querySelectorAll('.sbi_photo_wrap');
 
-        images.forEach((img) => {
-          const fullRes = img.closest('a').getAttribute('data-full-res');
+        const limitedImages = Array.from(images).slice(0, 6);
+
+      // Create a temporary container to hold the selected images
+      const tempContainer = document.createElement('div');
+      limitedImages.forEach(imgWrap => {
+        const img = imgWrap.querySelector('img');
+        if (img) {
+          const fullRes = imgWrap.querySelector('a').getAttribute('data-full-res');
           if (fullRes) {
             img.src = fullRes; // Replace placeholder src with full resolution image src
           }
-        });
+          tempContainer.appendChild(imgWrap);
+        }
+      });
 
-        setContent(doc.body.innerHTML);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching page content:', error);
-        setError('Error fetching page content');
-        setLoading(false);
-      }
-    };
+      setContent(tempContainer.innerHTML);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching page content:', error);
+      setError('Error fetching page content');
+      setLoading(false);
+    }
+  };
+
 
     getContent();
   }, []);
