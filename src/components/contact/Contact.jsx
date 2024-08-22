@@ -9,7 +9,7 @@ export const Contact = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const linkedinLink = 'https://www.linkedin.com/in/erica-b%C3%B6rjesson-a7166345/';
-    const instagramLink = 'https://www.instagram.com/livetsomerica';
+    const instagramLink = 'https://www.instagram.com/borjessons_';
     const emailAddress = 'kontakt@ericaborjesson.se';
 
     useEffect(() => {

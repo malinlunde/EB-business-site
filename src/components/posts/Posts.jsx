@@ -3,10 +3,12 @@ import './posts.css';
 import { fetchPageContent } from '../../services/wordpressService';
 import parse from 'html-react-parser';
 
+
 export const Posts = () => {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     const getContent = async () => {
@@ -28,6 +30,16 @@ export const Posts = () => {
           if (fullRes) {
             img.src = fullRes; // Replace placeholder src with full resolution image src
           }
+
+          const captionText = img.getAttribute('alt');
+          if (captionText) {
+            const captionElement = document.createElement('div');
+            captionElement.className = 'sbi-caption';
+            captionElement.innerText = captionText;
+
+            imgWrap.appendChild(captionElement); // Append the caption to the image wrapper
+          }
+
           tempContainer.appendChild(imgWrap);
         }
       });
@@ -56,7 +68,9 @@ export const Posts = () => {
   return (
     <section className="posts" id="posts">
       <div className="posts-content">
-        <h1>Mitt Instagram</h1>
+        <div className='Instalink'>
+          <a href="https://www.instagram.com/borjessons_/"> borjessons_</a>
+        </div>
         {parse(content)}
       </div>
     </section>
