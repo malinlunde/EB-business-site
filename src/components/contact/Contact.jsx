@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './contact.css'; // Create this CSS file for styling the contact form
 import { fetchPageContent } from '../../services/wordpressService';
+import axios from 'axios';
 import linkedin from '../icons/linkedin.svg';
 import instagram from '../icons/instagram.svg';
 
@@ -8,6 +9,7 @@ export const Contact = () => {
     const [formContent, setFormContent] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
     const linkedinLink = 'https://www.linkedin.com/in/erica-b%C3%B6rjesson-a7166345/';
     const instagramLink = 'https://www.instagram.com/borjessons_';
     const emailAddress = 'kontakt@ericaborjesson.se';
@@ -18,6 +20,13 @@ export const Contact = () => {
                 const content = await fetchPageContent('kontakt'); // Replace 'contact' with the slug of your WordPress contact form page
                 setFormContent(content);
                 setLoading(false);
+
+                setTimeout(() => {
+                    if (window.wpcf7) {
+                        window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+                    }
+                }, 100); // Adjust the timeout if needed
+                
             } catch (error) {
                 console.error('Error fetching contact form:', error);
                 setError('Error fetching contact form');
@@ -40,7 +49,7 @@ export const Contact = () => {
         <section className="contact" id="contact">
             <div className="contact-content">
                 <h2>Kontakta mig</h2>
-                <div dangerouslySetInnerHTML={{ __html: formContent }} />
+                <div dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renders the form */}
                 <div className="contact-info">
                     <p>Telefon: +46 (0) 12 345 67</p>
                     <p>E-post: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
@@ -50,7 +59,7 @@ export const Contact = () => {
                         <img src={instagram} alt='Instagram' className='instagram' />
                     </a>
                     <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
-                        <img src={linkedin} alt='linkedin' className='linkedin' />
+                        <img src={linkedin} alt='LinkedIn' className='linkedin' />
                     </a>
                 </div>
             </div>
