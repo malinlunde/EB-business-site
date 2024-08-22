@@ -91,7 +91,7 @@
     }
 
     .sbi_photo_wrap {
-        width: calc(50% - 10px); /* Two images per row on tablets */
+        width: calc(70% - 20px); /* Two images per row on tablets */
     }
 
 }
@@ -104,7 +104,7 @@
     }
 
     .sbi_photo_wrap {
-        width: calc(25% - 10px); /* Four images per row on desktop */
+        width: calc(70% - 20px); /* Four images per row on desktop */
     }
 
 }
