@@ -112,7 +112,7 @@ export const Carousell = () => {
                     <img src={leftArrow} alt="Previous" className='left-arrow-img'/>
                 </button>
                 <div className="project-image">
-                    <img src={projects[currentProjectIndex].images[0]} alt={projects[currentProjectIndex].title} />  
+                    <img src={projects[currentProjectIndex].headerImage} alt={projects[currentProjectIndex].title} />  
                 </div>
                 <button className="next-button" onClick={nextProject}>
                     <img src={rightArrow} alt="Next" className='right-arrow-img'/>
