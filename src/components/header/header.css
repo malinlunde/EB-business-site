@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
 header {
     background-color: #A0785A; /* Same background color as the footer */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .headerbox {
@@ -14,104 +17,105 @@ header {
 }
 
 .nav-links {
-    display: flex;
-    justify-content: flex-end; /* Align links to the right */
-    flex-grow: 1;
-}
-
-.nav-links ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-links ul li {
-    margin: 0 15px;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-family: "Reddit Mono", monospace;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: pink; /* Change color on hover */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-.menu-icon {
     display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
+    flex: 1;
+    justify-content: flex-end;
     color: white;
-}
-
-/* Mobile view */
-@media only screen and (max-width: 600px) {
-    .nav-links ul {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        width: 100%;
-        background-color: #A0785A;
-        transition: left 0.3s ease;
-        z-index: 1;
+   }
+   
+   .nav-links ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+   }
+   
+   .nav-links .nav-link {
+    text-decoration: none;
+    color: black;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: "Reddit Mono", monospace;
+   }
+   
+   .nav-links .nav-link:hover {
+    color: plum;
+    text-decoration: underline;
+    font-weight: 700;
+   }
+   
+   .menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+   }
+   
+   @media screen and (max-width: 1024px) {
+    .nav-links {
+      display: none;
     }
-
-    .nav-links ul.open {
-        left: 0;
+   
+    .nav-links.open {
+      display: block;
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background: white;
+      width: 80%;
+      max-width: 300px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
     }
-
-    .nav-links ul li {
-        margin: 10px 0;
+   
+    .nav-links.open ul {
+      display: block;
+      padding: 1rem;
     }
-
+   
+    .nav-links.open .nav-link {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+   
+    .logotyp {
+      width: 30%;
+    }
+   
     .menu-icon {
-        display: block;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 1000; /* Ensure it's on top of other elements */
+      color: white;
     }
-}
-
-/* Tablet view */
-@media only screen and (min-width: 600px) and (max-width: 1023px) {
-    .nav-links ul {
-        display: none; /* Hide the regular links */
+   }
+   
+   @media screen and (min-width: 1024px) {
+    .nav-links {
+      display: flex; /* Show nav links for desktop */
     }
-
+   
     .menu-icon {
-        display: block; /* Show the hamburger menu */
+      display: none; /* Hide menu icon for desktop */
     }
+   
+    .nav-links .nav-link {
+        text-decoration: none;
+        color: white;
+        margin-right: 20px;
+        transition: color 0.3s ease;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: "Reddit Mono", monospace;
+       }
 
-    .nav-links ul.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #A0785A;
-        z-index: 1;
-    }
-
-    .nav-links ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Desktop view */
-@media only screen and (min-width: 1024px) {
-    .nav-links ul {
-        flex-direction: row;
-    }
-
-    .nav-link {
-        font-size: 1rem;
-    }
-
-    .menu-icon {
-        display: none; /* Hide the hamburger menu in desktop view */
-    }
-}
+       .nav-links .nav-link:hover {
+        color: plum;
+        text-decoration: underline;
+        font-weight: 700;
+       }
+   }
