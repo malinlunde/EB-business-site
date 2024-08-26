@@ -13,7 +13,7 @@ export const Posts = () => {
   useEffect(() => {
     const getContent = async () => {
       try {
-        const pageContent = await fetchPageContent('instagram/'); // Replace 'instagram-feed' with your page slug
+        const pageContent = await fetchPageContent(31); // Replace 'instagram-feed' with your page slug
         console.log('Fetched Content:', pageContent);
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageContent, 'text/html');
