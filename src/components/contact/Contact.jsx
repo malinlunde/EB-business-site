@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './contact.css'; // Importera CSS för styling av kontaktformuläret
 import { fetchPageContent } from '../../services/wordpressService';
 
@@ -10,6 +10,7 @@ export const Contact = () => {
     const [formContent, setFormContent] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const formRef = useRef(null); // Ref to track the form container
 
     const linkedinLink = 'https://www.linkedin.com/in/erica-b%C3%B6rjesson-a7166345/';
     const instagramLink = 'https://www.instagram.com/borjessons_';
@@ -35,7 +36,7 @@ export const Contact = () => {
     // Lägg till en useEffect för att initiera Contact Form 7 efter att formContent är klart
     useEffect(() => {
         if (formContent) {
-            const formElement = document.querySelector('.wpcf7-form');
+            const formElement = formRef.current.querySelector('.wpcf7-form');
             if (window.wpcf7 && formElement) {
                 console.log('Initializing Contact Form 7');
                 window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
@@ -57,7 +58,7 @@ export const Contact = () => {
         <section className="contact" id="contact">
             <div className="contact-content">
                 <h2>Kontakta mig</h2>
-                <div dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar formuläret */}
+                <div ref={formRef} dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar formuläret */}
                 <div className="contact-info">
                     <p>Telefon: +46 (0) 12 345 67</p>
                     <p>E-post: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
