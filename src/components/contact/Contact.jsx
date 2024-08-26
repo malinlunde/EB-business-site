@@ -19,8 +19,15 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                const content = await fetchPageContent(31); 
+                let content = await fetchPageContent(31);
                 console.log('Fetched Content:', content);
+
+                // Manipulera formuläret
+                content = content.replace(
+                    /action="[^"]*"/g,
+                    'action="/#wpcf7-f14-p31-o1"'
+                );
+
                 setFormContent(content);
                 setLoading(false);
             } catch (error) {
@@ -40,7 +47,7 @@ export const Contact = () => {
             if (window.wpcf7 && formElement) {
                 try {
                     console.log('Initializing Contact Form 7');
-                    window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+                    window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form')); // Only initialize the form in the current component
                 } catch (initError) {
                     console.error('Failed to initialize Contact Form 7:', initError);
                 }
