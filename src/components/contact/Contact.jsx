@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import './contact.css'; // Importera CSS för styling av kontaktformuläret
+import './contact.css'; 
 import { fetchPageContent } from '../../services/wordpressService';
 
-// Uppdatera sökvägarna till bilderna på servern
 const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
 const instagram = 'https://ericaborjesson.se/upload/dist/assets/instagram.svg';
 
@@ -10,7 +9,7 @@ export const Contact = () => {
     const [formContent, setFormContent] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const formContainerRef = useRef(null); // Ref to track the form container
+    const formContainerRef = useRef(null);
 
     const linkedinLink = 'https://www.linkedin.com/in/erica-b%C3%B6rjesson-a7166345/';
     const instagramLink = 'https://www.instagram.com/borjessons_';
@@ -21,12 +20,6 @@ export const Contact = () => {
             try {
                 let content = await fetchPageContent(31);
                 console.log('Fetched Content:', content);
-
-                // Manipulera formuläret
-                content = content.replace(
-                    /action="[^"]*"/g,
-                    'action="/#wpcf7-f14-p31-o1"'
-                );
 
                 setFormContent(content);
                 setLoading(false);
@@ -47,7 +40,9 @@ export const Contact = () => {
             if (window.wpcf7 && formElement) {
                 try {
                     console.log('Initializing Contact Form 7');
-                    window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form')); // Only initialize the form in the current component
+                    setTimeout(() => {
+                        window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
+                    }, 500); // Fördröjning på 500ms
                 } catch (initError) {
                     console.error('Failed to initialize Contact Form 7:', initError);
                 }
