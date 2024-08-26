@@ -21,6 +21,12 @@ export const Contact = () => {
                 let content = await fetchPageContent(31);
                 console.log('Fetched Content:', content);
 
+                 // Rättar formulärets action-attribut
+                 content = content.replace(
+                    /action="[^"]*"/g,
+                    'action="/#wpcf7-f45-o1"'
+                );
+
                 setFormContent(content);
                 setLoading(false);
             } catch (error) {
