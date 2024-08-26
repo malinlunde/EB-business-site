@@ -24,7 +24,7 @@ export const Contact = () => {
                 // Rättar formulärets action-attribut
                 content = content.replace(
                     /action="[^"]*"/g,
-                    'action="/#wpcf7-f45-o1"'
+                    'action="/#wpcf7-f45-p31-o1"'
                 );
 
                 setFormContent(content);
