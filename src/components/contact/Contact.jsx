@@ -19,7 +19,7 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                const content = await fetchPageContent(''); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
+                const content = await fetchPageContent('hem'); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
                 setFormContent(content);
                 setLoading(false);
 
