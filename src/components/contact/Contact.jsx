@@ -19,15 +19,19 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                const content = await fetchPageContent('hem'); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
+                const content = await fetchPageContent(31); 
+                console.log('Fetched Content:', content);
                 setFormContent(content);
                 setLoading(false);
 
                 setTimeout(() => {
-                    if (window.wpcf7) {
+                    const formElement = document.querySelector('.wpcf7-form');
+                    if (window.wpcf7 && formElement) {
                         window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+                    } else {
+                        console.error('wpcf7 is not defined or no form element found.');
                     }
-                }, 100); // Justera timeout om nödvändigt
+                }, 100); //
                 
             } catch (error) {
                 console.error('Error fetching contact form:', error);
