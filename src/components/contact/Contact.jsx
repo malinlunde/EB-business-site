@@ -10,7 +10,7 @@ export const Contact = () => {
     const [formContent, setFormContent] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const formRef = useRef(null); // Ref to track the form container
+    const formContainerRef = useRef(null); // Ref to track the form container
 
     const linkedinLink = 'https://www.linkedin.com/in/erica-b%C3%B6rjesson-a7166345/';
     const instagramLink = 'https://www.instagram.com/borjessons_';
@@ -33,13 +33,17 @@ export const Contact = () => {
         getContent();
     }, []);
 
-    // Lägg till en useEffect för att initiera Contact Form 7 efter att formContent är klart
     useEffect(() => {
-        if (formContent) {
-            const formElement = formRef.current.querySelector('.wpcf7-form');
+        if (formContent && formContainerRef.current) {
+            const formElement = formContainerRef.current.querySelector('.wpcf7-form');
+            
             if (window.wpcf7 && formElement) {
-                console.log('Initializing Contact Form 7');
-                window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+                try {
+                    console.log('Initializing Contact Form 7');
+                    window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+                } catch (initError) {
+                    console.error('Failed to initialize Contact Form 7:', initError);
+                }
             } else {
                 console.error('wpcf7 is not defined or no form element found.');
             }
@@ -58,7 +62,7 @@ export const Contact = () => {
         <section className="contact" id="contact">
             <div className="contact-content">
                 <h2>Kontakta mig</h2>
-                <div ref={formRef} dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar formuläret */}
+                <div ref={formContainerRef} dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar formuläret */}
                 <div className="contact-info">
                     <p>Telefon: +46 (0) 12 345 67</p>
                     <p>E-post: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
