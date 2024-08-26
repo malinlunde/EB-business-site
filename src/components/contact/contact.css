@@ -37,7 +37,7 @@
 .contact button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #A0785A;;
     color: white;
     border: none;
     border-radius: 5px;
@@ -46,7 +46,7 @@
 }
 
 .contact button:hover {
-    background-color: #0056b3;
+    background-color: pink;
 }
 
 .contact-info {
@@ -62,6 +62,19 @@
 .contact-info a:hover {
     color: white; 
     text-decoration: underline;
+}
+
+.wpforms-submit {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wpforms-submit:hover {
+    background-color: pink;
 }
 
 .social-links {
