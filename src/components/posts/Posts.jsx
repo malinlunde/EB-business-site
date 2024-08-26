@@ -4,7 +4,7 @@ import { fetchPageContent } from '../../services/wordpressService';
 import parse from 'html-react-parser';
 
 export const Posts = () => {
-  const [instagramContent, setInstagramContent] = useState('');
+  const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -14,14 +14,17 @@ export const Posts = () => {
         const pageContent = await fetchPageContent(31); // Fetch content for page with ID 31
         console.log('Fetched Content:', pageContent);
 
-        // Filtrera ut endast Instagram-innehållet med data-instagram-feed
+        // Parse the fetched content to filter out only the Instagram feed
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageContent, 'text/html');
 
+        // Extract only the part you need - for example, for Instagram
         const instagramFeed = doc.querySelector('[data-instagram-feed]');
-        const instagramHTML = instagramFeed ? instagramFeed.innerHTML : ''; // Använd innerHTML för att få rätt innehåll
+        
+        // Convert back to HTML strings
+        const instagramHTML = instagramFeed ? instagramFeed.outerHTML : '';
 
-        setInstagramContent(instagramHTML);
+        setContent(instagramHTML);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching page content:', error);
@@ -47,7 +50,7 @@ export const Posts = () => {
         <div className='Instalink'>
           <a href="https://www.instagram.com/borjessons_/"> borjessons_</a>
         </div>
-        {parse(instagramContent)} {/* Rendera endast Instagram-innehållet */}
+        {parse(content)} {/* Render only the Instagram content */}
       </div>
     </section>
   );
