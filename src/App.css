@@ -5,11 +5,6 @@ html {
   scroll-behavior: smooth;
 }
 
-[data-instagram-feed],
-[data-contact-form] {
-  display: none;
-}
-
 nav {
     background-color: #A0785A;
     padding: 10px 0;

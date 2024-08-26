@@ -18,16 +18,14 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                let content = await fetchPageContent(31);
-                console.log('Fetched Content:', content);
+                const pageContent = await fetchPageContent(31);
+                console.log('Fetched Content:', pageContent);
 
-                // Parse HTML content
+                // Filtrera ut endast kontaktformuläret baserat på data-contact-form
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(content, 'text/html');
-
-                // Select Contact Form content section
+                const doc = parser.parseFromString(pageContent, 'text/html');
                 const contactForm = doc.querySelector('[data-contact-form]');
-                const contactFormHTML = contactForm ? contactForm.outerHTML : '';
+                const contactFormHTML = contactForm ? contactForm.innerHTML : '';
 
                 setFormContent(contactFormHTML);
                 setLoading(false);
@@ -45,15 +43,15 @@ export const Contact = () => {
         if (formContent && formContainerRef.current) {
             const formElement = formContainerRef.current.querySelector('.wpcf7-form');
             
-            console.log('Found form element:', formElement);  // Log to see if the form is found
+            console.log('Found form element:', formElement);  // Lägg till detta för att se om formuläret hittas
 
             if (window.wpcf7 && formElement) {
                 try {
-                    console.log('FormElement type:', formElement.constructor.name);  // Check the type of formElement
+                    console.log('FormElement type:', formElement.constructor.name);  // Kontrollera typen av formElement
 
                     console.log('Initializing Contact Form 7');
 
-                    // Ensure the form is visible and ready
+                    // Lägg till en extra kontroll för att säkerställa att formuläret är synligt och redo
                     setTimeout(() => {
                         if (formElement instanceof HTMLFormElement) {
                             window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
@@ -61,7 +59,7 @@ export const Contact = () => {
                         } else {
                             console.error('Failed to initialize Contact Form 7: formElement is not an HTMLFormElement');
                         }
-                    }, 1000); // Delay to ensure form is loaded
+                    }, 1000); // Fördröjning på 1000ms för att säkerställa att formuläret har laddats
                 } catch (initError) {
                     console.error('Failed to initialize Contact Form 7:', initError);
                 }
