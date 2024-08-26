@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './contact.css'; // Importera CSS för styling av kontaktformuläret
 import { fetchPageContent } from '../../services/wordpressService';
 
-
 // Uppdatera sökvägarna till bilderna på servern
 const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
 const instagram = 'https://ericaborjesson.se/upload/dist/assets/instagram.svg';
@@ -23,16 +22,6 @@ export const Contact = () => {
                 console.log('Fetched Content:', content);
                 setFormContent(content);
                 setLoading(false);
-
-                setTimeout(() => {
-                    const formElement = document.querySelector('.wpcf7-form');
-                    if (window.wpcf7 && formElement) {
-                        window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
-                    } else {
-                        console.error('wpcf7 is not defined or no form element found.');
-                    }
-                }, 100); //
-                
             } catch (error) {
                 console.error('Error fetching contact form:', error);
                 setError('Error fetching contact form');
@@ -42,6 +31,19 @@ export const Contact = () => {
 
         getContent();
     }, []);
+
+    // Lägg till en useEffect för att initiera Contact Form 7 efter att formContent är klart
+    useEffect(() => {
+        if (formContent) {
+            const formElement = document.querySelector('.wpcf7-form');
+            if (window.wpcf7 && formElement) {
+                console.log('Initializing Contact Form 7');
+                window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
+            } else {
+                console.error('wpcf7 is not defined or no form element found.');
+            }
+        }
+    }, [formContent]);
 
     if (loading) {
         return <div>Loading...</div>;
