@@ -3,7 +3,7 @@ import './contact.css';
 import { fetchPageContent } from '../../services/wordpressService';
 
 const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
-const instagram = 'https://ericaborjesson.se/upload/dist/assets/instagram.svg';
+const instagram = 'https://ericaborjessons.se/upload/dist/assets/instagram.svg';
 
 export const Contact = () => {
     const [formContent, setFormContent] = useState('');
@@ -21,8 +21,8 @@ export const Contact = () => {
                 let content = await fetchPageContent(31);
                 console.log('Fetched Content:', content);
 
-                 // Rättar formulärets action-attribut
-                 content = content.replace(
+                // Rättar formulärets action-attribut
+                content = content.replace(
                     /action="[^"]*"/g,
                     'action="/#wpcf7-f45-o1"'
                 );
@@ -43,43 +43,32 @@ export const Contact = () => {
         if (formContent && formContainerRef.current) {
             const formElement = formContainerRef.current.querySelector('.wpcf7-form');
             
+            console.log('Found form element:', formElement);  // Lägg till detta för att se om formuläret hittas
+
             if (window.wpcf7 && formElement) {
                 try {
+                    console.log('FormElement type:', formElement.constructor.name);  // Kontrollera typen av formElement
+
                     console.log('Initializing Contact Form 7');
                     setTimeout(() => {
                         window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
-                    // Lägg till en händelsehanterare för att logga när formuläret skickas
-                    formElement.addEventListener('submit', (e) => {
-                        e.preventDefault(); // Förhindra standardinlämning för att kontrollera vad som händer
-                        console.log('Formuläret har skickats!');
-                        
-                        // Kontrollera om formuläret skickas korrekt
-                        const formData = new FormData(formElement);
-                        for (let [key, value] of formData.entries()) {
-                            console.log(`${key}: ${value}`);
-                        }
-
-                        // Tillåt formuläret att skicka som normalt
-                        formElement.submit();
-                    });
-                }, 500); // Fördröjning på 500ms
-            } catch (initError) {
-                console.error('Failed to initialize Contact Form 7:', initError);
+                    }, 500); // Fördröjning på 500ms
+                } catch (initError) {
+                    console.error('Failed to initialize Contact Form 7:', initError);
+                }
+            } else {
+                console.error('wpcf7 is not defined or no form element found.');
             }
-        } else {
-            console.error('wpcf7 is not defined or no form element found.');
         }
+    }, [formContent]);
+
+    if (loading) {
+        return <div>Loading...</div>;
     }
-}, [formContent]);
 
-if (loading) {
-    return <div>Loading...</div>;
-}
-
-if (error) {
-    return <div>{error}</div>;
-}
-
+    if (error) {
+        return <div>{error}</div>;
+    }
 
     return (
         <section className="contact" id="contact">
