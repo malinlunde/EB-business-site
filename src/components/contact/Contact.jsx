@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './contact.css'; // Importera CSS för styling av kontaktformuläret
 import { fetchPageContent } from '../../services/wordpressService';
-import axios from 'axios';
+
 
 // Uppdatera sökvägarna till bilderna på servern
 const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
@@ -19,7 +19,7 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                const content = await fetchPageContent('/'); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
+                const content = await fetchPageContent(''); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
                 setFormContent(content);
                 setLoading(false);
 
