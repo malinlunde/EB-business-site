@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './contact.css'; // Create this CSS file for styling the contact form
+import './contact.css'; // Importera CSS för styling av kontaktformuläret
 import { fetchPageContent } from '../../services/wordpressService';
 import axios from 'axios';
-import linkedin from '../icons/linkedin.svg';
-import instagram from '../icons/instagram.svg';
+
+// Uppdatera sökvägarna till bilderna på servern
+const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
+const instagram = 'https://ericaborjesson.se/upload/dist/assets/instagram.svg';
 
 export const Contact = () => {
     const [formContent, setFormContent] = useState('');
@@ -17,7 +19,7 @@ export const Contact = () => {
     useEffect(() => {
         const getContent = async () => {
             try {
-                const content = await fetchPageContent('kontakt'); // Replace 'contact' with the slug of your WordPress contact form page
+                const content = await fetchPageContent('kontakt'); // Byt ut 'kontakt' mot slugen för din WordPress-sida med kontaktformuläret
                 setFormContent(content);
                 setLoading(false);
 
@@ -25,7 +27,7 @@ export const Contact = () => {
                     if (window.wpcf7) {
                         window.wpcf7.init(document.querySelectorAll('.wpcf7-form'));
                     }
-                }, 100); // Adjust the timeout if needed
+                }, 100); // Justera timeout om nödvändigt
                 
             } catch (error) {
                 console.error('Error fetching contact form:', error);
@@ -49,7 +51,7 @@ export const Contact = () => {
         <section className="contact" id="contact">
             <div className="contact-content">
                 <h2>Kontakta mig</h2>
-                <div dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renders the form */}
+                <div dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar formuläret */}
                 <div className="contact-info">
                     <p>Telefon: +46 (0) 12 345 67</p>
                     <p>E-post: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>

@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
 import './carousell.css';
 import { Link } from 'react-router-dom';
-import leftArrow from '../images/leftarrow.png';
-import rightArrow from '../images/rightarrow.png';
-import BruksholmenHeader from '../images/Bruksholmen.svg';
-import bruksholmen from '../images/bruksholmen.png';
-import bruksholmen1 from '../images/bruksholmen1.png';
-import bruksholmen2 from '../images/bruksholmen2.png';
-import bruksholmen3 from '../images/bruksholmen3.png';
-import bruksholmen4 from '../images/bruksholmen4.png';
-import bruksholmen5 from '../images/bruksholmen5.jpg';
-import bruksholmen6 from '../images/bruksholmen6.png';
-import bruksholmen7 from '../images/bruksholmen7.png';
-import bruksholmen8 from '../images/bruksholmen8.png';
-import weddingheader from '../images/weddingheader.svg';
-import wedding1 from '../images/wedding1.png';
-import wedding2 from '../images/wedding2.png';
-import interior from '../images/Interior.svg';
-import nyttkontor2 from '../images/nyttkontor2.png';
-import nyttkontor3 from '../images/nyttkontor3.png';
-import singerheader from '../images/Singer .svg';
-import skidorheader from '../images/Skidor.svg';
-import skidor1 from '../images/skidor.png';
-import skidor2 from '../images/skidor2.png';
-import skidor3 from '../images/skidor3.png';
-import singer1 from '../images/singer1.png';
 
+// Uppdatera sökvägar till bilder på servern
+const leftArrow = 'https://ericaborjesson.se/upload/dist/assets/leftarrow.png';
+const rightArrow = 'https://ericaborjesson.se/upload/dist/assets/rightarrow.png';
+const BruksholmenHeader = 'https://ericaborjesson.se/upload/dist/assets/Bruksholmen.svg';
+const bruksholmen7 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen7.png';
+const bruksholmen8 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen8.png';
+const bruksholmen3 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen3.png';
+const bruksholmen6 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen6.png';
+const bruksholmen4 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen4.png';
+const bruksholmen5 = 'https://ericaborjesson.se/upload/dist/assets/bruksholmen5.jpg';
+const weddingheader = 'https://ericaborjesson.se/upload/dist/assets/weddingheader.svg';
+const wedding1 = 'https://ericaborjesson.se/upload/dist/assets/wedding1.png';
+const wedding2 = 'https://ericaborjesson.se/upload/dist/assets/wedding2.png';
+const interior = 'https://ericaborjesson.se/upload/dist/assets/Interior.svg';
+const nyttkontor2 = 'https://ericaborjesson.se/upload/dist/assets/nyttkontor2.png';
+const nyttkontor3 = 'https://ericaborjesson.se/upload/dist/assets/nyttkontor3.png';
+const singerheader = 'https://ericaborjesson.se/upload/dist/assets/Singer.svg';
+const skidorheader = 'https://ericaborjesson.se/upload/dist/assets/Skidor.svg';
+const skidor1 = 'https://ericaborjesson.se/upload/dist/assets/skidor.png';
+const skidor2 = 'https://ericaborjesson.se/upload/dist/assets/skidor2.png';
+const skidor3 = 'https://ericaborjesson.se/upload/dist/assets/skidor3.png';
+const singer1 = 'https://ericaborjesson.se/upload/dist/assets/singer1.png';
 
-
+// Projektdata med uppdaterade bild-URL:er
 export const projects = [
     { 
         id: 1, 
@@ -101,7 +99,6 @@ export const Carousell = () => {
         setCurrentProjectIndex((currentProjectIndex - 1 + projects.length) % projects.length);
     };
 
-
     return (
         <section className="carousell" id="carousell" >
             <div className="title">
@@ -117,7 +114,6 @@ export const Carousell = () => {
                 <button className="next-button" onClick={nextProject}>
                     <img src={rightArrow} alt="Next" className='right-arrow-img'/>
                 </button>
-            
             </div>
             <div className="description">
                 <p>{projects[currentProjectIndex].description}</p>

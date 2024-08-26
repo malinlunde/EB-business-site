@@ -1,6 +1,8 @@
 import React from 'react';
 import './intro.css';
-import profileImage from '../images/profilbild.jpeg';
+
+
+const profileImage = 'https://ericaborjesson.se/upload/dist/assets/profilbild.jpeg';
 
 export const Intro = () => {
     return (
