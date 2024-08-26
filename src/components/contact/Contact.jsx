@@ -21,13 +21,15 @@ export const Contact = () => {
                 let content = await fetchPageContent(31);
                 console.log('Fetched Content:', content);
 
-                // Rättar formulärets action-attribut
-                content = content.replace(
-                    /action="[^"]*"/g,
-                    'action="/#wpcf7-f45-p31-o1"'
-                );
+                // Parse HTML content
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(content, 'text/html');
 
-                setFormContent(content);
+                // Select Contact Form content section
+                const contactForm = doc.querySelector('[data-contact-form]');
+                const contactFormHTML = contactForm ? contactForm.outerHTML : '';
+
+                setFormContent(contactFormHTML);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching contact form:', error);
@@ -43,15 +45,15 @@ export const Contact = () => {
         if (formContent && formContainerRef.current) {
             const formElement = formContainerRef.current.querySelector('.wpcf7-form');
             
-            console.log('Found form element:', formElement);  // Lägg till detta för att se om formuläret hittas
+            console.log('Found form element:', formElement);  // Log to see if the form is found
 
             if (window.wpcf7 && formElement) {
                 try {
-                    console.log('FormElement type:', formElement.constructor.name);  // Kontrollera typen av formElement
+                    console.log('FormElement type:', formElement.constructor.name);  // Check the type of formElement
 
                     console.log('Initializing Contact Form 7');
 
-                    // Lägg till en extra kontroll för att säkerställa att formuläret är synligt och redo
+                    // Ensure the form is visible and ready
                     setTimeout(() => {
                         if (formElement instanceof HTMLFormElement) {
                             window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
@@ -59,7 +61,7 @@ export const Contact = () => {
                         } else {
                             console.error('Failed to initialize Contact Form 7: formElement is not an HTMLFormElement');
                         }
-                    }, 1000); // Fördröjning på 1000ms för att säkerställa att formuläret har laddats
+                    }, 1000); // Delay to ensure form is loaded
                 } catch (initError) {
                     console.error('Failed to initialize Contact Form 7:', initError);
                 }

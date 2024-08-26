@@ -3,56 +3,33 @@ import './posts.css';
 import { fetchPageContent } from '../../services/wordpressService';
 import parse from 'html-react-parser';
 
-
 export const Posts = () => {
-  const [content, setContent] = useState('');
+  const [instagramContent, setInstagramContent] = useState(''); // Endast för Instagram
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
 
   useEffect(() => {
     const getContent = async () => {
       try {
-        const pageContent = await fetchPageContent(31); // Replace 'instagram-feed' with your page slug
+        const pageContent = await fetchPageContent(31); // Fetch content for page with ID 31
         console.log('Fetched Content:', pageContent);
+
+        // Parse HTML content
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageContent, 'text/html');
-        const images = doc.querySelectorAll('.sbi_photo_wrap');
 
-        const limitedImages = Array.from(images).slice(0, 6);
+        // Select Instagram content section
+        const instagramFeed = doc.querySelector('[data-instagram-feed]');
+        const instagramHTML = instagramFeed ? instagramFeed.outerHTML : '';
 
-      // Create a temporary container to hold the selected images
-      const tempContainer = document.createElement('div');
-      limitedImages.forEach(imgWrap => {
-        const img = imgWrap.querySelector('img');
-        if (img) {
-          const fullRes = imgWrap.querySelector('a').getAttribute('data-full-res');
-          if (fullRes) {
-            img.src = fullRes; // Replace placeholder src with full resolution image src
-          }
-
-          const captionText = img.getAttribute('alt');
-          if (captionText) {
-            const captionElement = document.createElement('div');
-            captionElement.className = 'sbi-caption';
-            captionElement.innerText = captionText;
-
-            imgWrap.appendChild(captionElement); // Append the caption to the image wrapper
-          }
-
-          tempContainer.appendChild(imgWrap);
-        }
-      });
-
-      setContent(tempContainer.innerHTML);
-      setLoading(false);
-    } catch (error) {
-      console.error('Error fetching page content:', error);
-      setError('Error fetching page content');
-      setLoading(false);
-    }
-  };
-
+        setInstagramContent(instagramHTML);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching page content:', error);
+        setError('Error fetching page content');
+        setLoading(false);
+      }
+    };
 
     getContent();
   }, []);
@@ -71,7 +48,7 @@ export const Posts = () => {
         <div className='Instalink'>
           <a href="https://www.instagram.com/borjessons_/"> borjessons_</a>
         </div>
-        {parse(content)}
+        {parse(instagramContent)} {/* Rendera endast Instagram-innehållet */}
       </div>
     </section>
   );
