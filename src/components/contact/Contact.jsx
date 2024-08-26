@@ -3,7 +3,7 @@ import './contact.css';
 import { fetchPageContent } from '../../services/wordpressService';
 
 const linkedin = 'https://ericaborjesson.se/upload/dist/assets/linkedin.svg';
-const instagram = 'https://ericaborjessons.se/upload/dist/assets/instagram.svg';
+const instagram = 'https://ericaborjesson.se/upload/dist/assets/instagram.svg';
 
 export const Contact = () => {
     const [formContent, setFormContent] = useState('');
@@ -50,9 +50,16 @@ export const Contact = () => {
                     console.log('FormElement type:', formElement.constructor.name);  // Kontrollera typen av formElement
 
                     console.log('Initializing Contact Form 7');
+
+                    // Lägg till en extra kontroll för att säkerställa att formuläret är synligt och redo
                     setTimeout(() => {
-                        window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
-                    }, 500); // Fördröjning på 500ms
+                        if (formElement instanceof HTMLFormElement) {
+                            window.wpcf7.init(formContainerRef.current.querySelectorAll('.wpcf7-form'));
+                            console.log('Contact Form 7 initialized successfully.');
+                        } else {
+                            console.error('Failed to initialize Contact Form 7: formElement is not an HTMLFormElement');
+                        }
+                    }, 1000); // Fördröjning på 1000ms för att säkerställa att formuläret har laddats
                 } catch (initError) {
                     console.error('Failed to initialize Contact Form 7:', initError);
                 }
