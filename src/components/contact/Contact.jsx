@@ -46,7 +46,7 @@ export const Contact = () => {
             // Kontrollera om WPForms-skript redan finns på sidan
             if (!document.querySelector('#wpforms-script')) {
                 const script = document.createElement('script');
-                script.src = 'https://ericaborjesson.se/wp-content/plugins/wpforms-lite/assets/js/wpforms.js'; // Kontrollera så att detta är rätt sökväg till WPForms-skriptet
+                script.src = 'https://ericaborjesson.se/wp-content/plugins/wpforms-lite/assets/js/frontend/wpforms.js'; // Kontrollera så att detta är rätt sökväg till WPForms-skriptet
                 script.id = 'wpforms-script';
                 script.async = true;
                 document.body.appendChild(script);
