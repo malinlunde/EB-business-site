@@ -59,6 +59,12 @@ export const Contact = () => {
                     document.addEventListener('wpformsSubmitSuccess', function(event) {
                         console.log('Form submitted successfully!', event);
                         alert('Formuläret har skickats framgångsrikt!');
+                        
+                        // Rensa fält
+                        const form = formContainerRef.current.querySelector('.wpforms-form');
+                        if (form) {
+                            form.reset();
+                        }
                     });
 
                     document.addEventListener('wpformsSubmitError', function(event) {
