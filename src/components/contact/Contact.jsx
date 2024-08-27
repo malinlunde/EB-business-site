@@ -54,12 +54,14 @@ export const Contact = () => {
                 script.onload = () => {
                     console.log('WPForms script loaded.');
                     window.wpforms.ready(); // Se till att WPForms-initialisering körs efter att skriptet laddats
-                    window.addEventListener('wpformsSubmitSuccess', function(event) {
+
+                    // Lägg till WPForms event listeners här efter att skriptet har laddats
+                    document.addEventListener('wpformsSubmitSuccess', function(event) {
                         console.log('Form submitted successfully!', event);
                         alert('Formuläret har skickats framgångsrikt!');
                     });
 
-                    window.addEventListener('wpformsSubmitError', function(event) {
+                    document.addEventListener('wpformsSubmitError', function(event) {
                         console.log('Form submission error:', event);
                         alert('Ett fel uppstod vid formulärinlämningen. Försök igen.');
                     });
@@ -72,6 +74,20 @@ export const Contact = () => {
             }
         }
     }, [formContent]);
+
+    // Ny useEffect för att lägga till en eventlistener på submit-knappen
+    useEffect(() => {
+        if (formContainerRef.current) {
+            const submitButton = formContainerRef.current.querySelector('.wpforms-submit');
+
+            if (submitButton) {
+                submitButton.addEventListener('click', (e) => {
+                    console.log('Submit button clicked');
+                });
+            }
+        }
+    }, [formContent]);
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -80,7 +96,6 @@ export const Contact = () => {
         return <div>{error}</div>;
     }
 
-    
     return (
         <section className="contact" id="contact">
             <div className="contact-content">
