@@ -40,6 +40,30 @@ export const Contact = () => {
         getContent();
     }, []);
 
+    // Dynamiskt ladda WPForms JavaScript efter att innehållet har renderats
+    useEffect(() => {
+        if (formContent && formContainerRef.current) {
+            // Kontrollera om WPForms-skript redan finns på sidan
+            if (!document.querySelector('#wpforms-script')) {
+                const script = document.createElement('script');
+                script.src = 'https://ericaborjesson.se/wp-content/plugins/wpforms-lite/assets/js/wpforms.js'; // Kontrollera så att detta är rätt sökväg till WPForms-skriptet
+                script.id = 'wpforms-script';
+                script.async = true;
+                document.body.appendChild(script);
+
+                script.onload = () => {
+                    console.log('WPForms script loaded.');
+                    window.wpforms.ready(); // Se till att WPForms-initialisering körs efter att skriptet laddats
+                };
+            } else {
+                // Om skriptet redan är laddat, kör WPForms-initialisering direkt
+                if (window.wpforms && window.wpforms.ready) {
+                    window.wpforms.ready();
+                }
+            }
+        }
+    }, [formContent]);
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -48,6 +72,7 @@ export const Contact = () => {
         return <div>{error}</div>;
     }
 
+    
     return (
         <section className="contact" id="contact">
             <div className="contact-content">
