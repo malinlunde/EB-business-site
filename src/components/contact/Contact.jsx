@@ -54,6 +54,15 @@ export const Contact = () => {
                 script.onload = () => {
                     console.log('WPForms script loaded.');
                     window.wpforms.ready(); // Se till att WPForms-initialisering körs efter att skriptet laddats
+                    window.addEventListener('wpformsSubmitSuccess', function(event) {
+                        console.log('Form submitted successfully!', event);
+                        alert('Formuläret har skickats framgångsrikt!');
+                    });
+
+                    window.addEventListener('wpformsSubmitError', function(event) {
+                        console.log('Form submission error:', event);
+                        alert('Ett fel uppstod vid formulärinlämningen. Försök igen.');
+                    });
                 };
             } else {
                 // Om skriptet redan är laddat, kör WPForms-initialisering direkt
@@ -63,7 +72,6 @@ export const Contact = () => {
             }
         }
     }, [formContent]);
-
     if (loading) {
         return <div>Loading...</div>;
     }
