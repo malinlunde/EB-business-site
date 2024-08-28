@@ -108,7 +108,7 @@ export const Contact = () => {
                 <h2>Kontakta mig</h2>
                 <div ref={formContainerRef} dangerouslySetInnerHTML={{ __html: formContent }} /> {/* Renderar WPForms-formuläret */}
                 <div className="contact-info">
-                    <p>Telefon: +46 (0) 12 345 67</p>
+                    <p>Telefon: +46 (0) 218 78 34</p>
                     <p>E-post: <a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
                 </div>
                 <div className="social-links">
